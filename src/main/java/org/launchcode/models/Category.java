@@ -1,28 +1,28 @@
 package org.launchcode.models;
 
 
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
 
 @Entity
 public class Category {
 
-
-
     @Id
     @GeneratedValue
-    private int Id;
+    private int id;
 
     @NotNull
     @Size(min=3, max = 15)
     private String name;
 
+    private Category category;
+
     public int getId() {
-        return Id;
+        return id;
     }
 
     public String getName() {
